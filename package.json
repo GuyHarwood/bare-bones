@@ -8,7 +8,7 @@
     "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/functional.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "test": "tape ./test/integration.js | tap-spec",
     "start": "node ./index.js",
-    "jshint": "jshint -c .jshintrc --exclude-path .gitignore .",
+    "standard": "./standard.sh",
     "startn": "nodemon ./index.js"
   },
   "repository": {
@@ -44,7 +44,6 @@
     "node": ">= 8"
   },
   "pre-commit": [
-    "jshint",
-    "coverage"
+    "standard"
   ]
 }
