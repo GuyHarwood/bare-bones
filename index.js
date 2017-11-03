@@ -1,12 +1,15 @@
-var port = process.env.PORT || 1337 // let heroku define port or use 1337
-var http = require('http') // core node.js http (no frameworks)
-var url = require('url') // core node.js url (no frameworks)
-var app = require('./app') // auth, token verification & render helpers
+const port = process.env.PORT || 4000
+const http = require('http') // core node.js http (no frameworks)
+const url = require('url') // core node.js url (no frameworks)
+const app = require('./app') // auth, token verification & render helpers
 
 http.createServer(function (req, res) {
   var path = url.parse(req.url).pathname
+  console.log('path is:', path)
   if (path === '/') {
-    app.home(res)
+    app.home(req, res)
+  } else if (path === '/docs') {
+    app.docCount(req, res)
   } else if (path === '/exit') {
     app.exit(res)
   } else {

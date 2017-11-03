@@ -8,18 +8,17 @@
     "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/functional.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "test": "tape ./test/integration.js | tap-spec",
     "start": "node ./index.js",
-    "jshint": "jshint -c .jshintrc --exclude-path .gitignore ."
+    "jshint": "jshint -c .jshintrc --exclude-path .gitignore .",
+    "startn": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:GuyHarwood/bare-bones.git"
   },
   "keywords": [
-    "JSON",
-    "Web",
-    "Tokens",
-    "JWT",
-    "Security"
+    "NodeJS",
+    "API",
+    "Basic"
   ],
   "author": "https://github.com/guyharwood",
   "license": "ISC",
@@ -28,6 +27,7 @@
   },
   "homepage": "https://github.com/GuyHarwood/bare-bones",
   "dependencies": {
+    "documentdb": "^1.13.0",
     "jsonwebtoken": "^7.0.0"
   },
   "devDependencies": {
