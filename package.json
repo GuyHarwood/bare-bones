@@ -8,12 +8,11 @@
     "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/functional.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "test": "tape ./test/integration.js | tap-spec",
     "start": "node ./index.js",
-    "jshint": "jshint -c .jshintrc --exclude-path .gitignore .",
-    "codeclimate": "CODECLIMATE_REPO_TOKEN=38d95ab0f78e69f0c4e1f6c5c8fde7edfcf85d396684eb658b73662154e7b2cc codeclimate ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info"
+    "jshint": "jshint -c .jshintrc --exclude-path .gitignore ."
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:GuyHarwood/learn-json-web-tokens.git"
+    "url": "git@github.com:GuyHarwood/bare-bones.git"
   },
   "keywords": [
     "JSON",
@@ -25,9 +24,9 @@
   "author": "https://github.com/guyharwood",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/guyharwood/learn-json-web-tokens/issues"
+    "url": "https://github.com/GuyHarwood/bare-bones/issues"
   },
-  "homepage": "https://github.com/guyharwood/learn-json-web-tokens",
+  "homepage": "https://github.com/GuyHarwood/bare-bones",
   "dependencies": {
     "jsonwebtoken": "^7.0.0"
   },
