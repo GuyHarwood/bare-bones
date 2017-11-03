@@ -3,7 +3,7 @@ const cosmos = require('./cosmos')
 
 function home (req, res) {
   if (req.method !== 'GET') return unsupported(res)
-  writeHead(res, 200)
+  res.writeHead(200, {'content-type': 'application/json'})
   return res.end(upSince)
 }
 

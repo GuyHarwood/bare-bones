@@ -29,3 +29,5 @@ node_modules
 example/lib/db
 
 .DS_Store
+
+.env

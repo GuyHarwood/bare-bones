@@ -1,3 +1,4 @@
+require('dotenv').config()
 const port = process.env.PORT || 4000
 const http = require('http') // core node.js http (no frameworks)
 const url = require('url') // core node.js url (no frameworks)
@@ -8,6 +9,8 @@ http.createServer(function (req, res) {
   console.log('path is:', path)
   if (path === '/') {
     app.home(req, res)
+  } else if (path === '/doc') {
+    app.postDoc(req, res)
   } else if (path === '/docs') {
     app.docCount(req, res)
   } else if (path === '/exit') {
