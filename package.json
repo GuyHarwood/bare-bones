@@ -1,0 +1,51 @@
+{
+  "name": "node-api-boilerplate",
+  "version": "1.0.0",
+  "description": "Raw API HTTP Server Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "functional": "istanbul cover ./node_modules/tape/bin/tape ./test/functional.js | tap-spec",
+    "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/functional.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "test": "tape ./test/integration.js | tap-spec",
+    "start": "node ./index.js",
+    "jshint": "jshint -c .jshintrc --exclude-path .gitignore .",
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=38d95ab0f78e69f0c4e1f6c5c8fde7edfcf85d396684eb658b73662154e7b2cc codeclimate ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GuyHarwood/learn-json-web-tokens.git"
+  },
+  "keywords": [
+    "JSON",
+    "Web",
+    "Tokens",
+    "JWT",
+    "Security"
+  ],
+  "author": "https://github.com/guyharwood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guyharwood/learn-json-web-tokens/issues"
+  },
+  "homepage": "https://github.com/guyharwood/learn-json-web-tokens",
+  "dependencies": {
+    "jsonwebtoken": "^7.0.0"
+  },
+  "devDependencies": {
+    "codeclimate-test-reporter": "0.1.0",
+    "istanbul": "^0.4.3",
+    "jshint": "^2.8.0",
+    "pre-commit": "^1.0.10",
+    "request": "^2.60.0",
+    "standard": "^10.0.3",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.1"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "pre-commit": [
+    "jshint",
+    "coverage"
+  ]
+}
